@@ -1,0 +1,12 @@
+import cv2
+img = cv2.imread("andre.png", cv2.IMREAD_COLOR)
+gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+canny = cv2.Canny(gray, 80, 200)
+blur = cv2.blur(gray, (5, 5))
+stylization = cv2.stylization(img)
+enhance = cv2.detailEnhance(img)
+filtered = cv2.edgePreservingFilter(img)
+cv2.imshow('andre', filtered)
+cv2.waitKey(0)
+cv2.destroyAllWindows()
+cv2.imwrite("andre_enhace.png", enhance)
